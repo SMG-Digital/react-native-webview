@@ -48,11 +48,6 @@ const { resolveAssetSource } = Image;
 let uniqueRef = 0;
 
 /**
- * A simple counter to uniquely identify WebView instances. Do not use this for anything else.
- */
-let uniqueRef = 0;
-
-/**
  * Renders a native WebView.
  */
 class WebView extends React.Component<AndroidWebViewProps, State> {
