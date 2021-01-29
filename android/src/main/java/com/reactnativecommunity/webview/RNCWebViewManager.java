@@ -44,8 +44,6 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.core.content.ContextCompat;
 import androidx.core.util.Pair;
 
 import com.facebook.common.logging.FLog;
@@ -94,8 +92,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-
-import javax.annotation.Nullable;
 
 /**
  * Manages instances of {@link WebView}
@@ -1427,7 +1423,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
             data.putString("data", message);
 
             if (mCatalystInstance != null) {
-              mContext.sendDirectMessage("onMessage", data);
+              sendDirectMessage("onMessage", data);
             } else {
               dispatchEvent(webView, new TopMessageEvent(webView.getId(), data));
             }
